@@ -101,5 +101,8 @@ async def ask(interaction: discord.Interaction, question: str):
         await interaction.followup.send(
             "An error occurred while processing your request."
         )
+@bot.tree.command(name="ping", description="Test command")
+async def ping(interaction: discord.Interaction):
+    await interaction.response.send_message("pong")
 
 bot.run(os.getenv("DISCORD_TOKEN"))
